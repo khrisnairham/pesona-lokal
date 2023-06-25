@@ -19,57 +19,22 @@
         <!-- <div class="title signup">Form Registrasi</div> -->
       </div>
       <div class="form-container">
-        <div class="slide-controls">
-          <input type="radio" name="slide" id="login" checked>
-          <input type="radio" name="slide" id="signup">
-          <label for="login" class="slide login">Login</label>
-          <label for="signup" class="slide signup">Daftar</label>
-          <div class="slider-tab"></div>
-        </div>
+        <h3 class="text-center mt-4" style="color: rgba(102, 102, 102, 0.959); font-weight: 600;">Lupa Kata Sandi</h3>
         <div class="form-inner">
-              
-
-          <form id="loginform" action="./koneksidb/login.php" method="POST" class="login">
+          <form id="lupaPass" action="lupaPassAdv.html">
             <pre>
             </pre>
             <div id="loginAlertContainer"></div>
-            <div class="field">
+            <div class="field" style="margin-top: -20px;">
               <input type="text" name="email" placeholder="Masukan Email " required>
             </div>
-            <div class="field">
-              <input type="password" name="password" placeholder="Masukan Password" required>
-            </div>
-            <div class="pass-link"><a href="lupaPass.html">Lupa password?</a></div>
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" value="Login">
+              <input type="submit" value="Lanjutkan">
             </div>
+            <div class="pass-link mt-4 text-center"><a href="loginSignUp.html">Masuk Ke Akun</a></div>
           </form>
           
-          <form  method="POST" id="registerForm" action="./koneksidb/register.php" class="signup" >
-                     <div id="registerAlertContainer"></div>
-
-            <div class="field">
-               
-              <input name='nama' type="text"  placeholder="Masukan Nama" required>
-            </div>
-            <div class="field">
-              <input  type="text" name="email" placeholder="Masukan Email" required>
-            </div>
-            <div class="field">
-              <input type="password" name="password" id="password" placeholder="Masukan Password" required>
-            </div>
-            <div class="field">
-                
-              <input type="password" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required>
-            </div>
-
-            <div class="field btn">
-              <div class="btn-layer"></div>
-              <input type="submit" value="Daftar">
-            </div>
-            <div class="signup-link">Sudah punya akun? <a href="">Login</a></div>
-          </form>
           <p id="error_message" style="color: red;"></p>
         </div>
       </div>
