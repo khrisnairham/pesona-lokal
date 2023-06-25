@@ -10,7 +10,9 @@ html,body{
   height: 100%;
   width: 100%;
   place-items: center;
-  background: url("https://launchinpad.com/storage/uploads/project_cover/dGERUzgMTLuAqAhQmgBT40TH9JpFjI2F8X8WXylI.jpg");
+  /* background: url("https://launchinpad.com/storage/uploads/project_cover/dGERUzgMTLuAqAhQmgBT40TH9JpFjI2F8X8WXylI.jpg"); */
+  background: url("https://raw.githubusercontent.com/ravenusa/sstt/main/bglogin.png");
+  background-size: cover;
   /*background-color: #8EC5FC;*/
   /* background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
 
@@ -22,9 +24,9 @@ html,body{
 .wrapper{
   overflow: hidden;
   max-width: 390px;
-  background: #fff;
-  margin-top: 325px;
-  margin-bottom: 80px;
+  background: #ffffff9c;
+  margin-top: 330px;
+  margin-top: 70px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -169,9 +171,11 @@ form .btn .btn-layer{
   background: #0073e6;
   border-radius: 15px;
   transition: all 0.4s ease;;
+  margin-top: -6px;
 }
 form .btn:hover .btn-layer{
   left: 0;
+  right: 0;
 }
 form .btn input[type="submit"]{
   height: 100%;
