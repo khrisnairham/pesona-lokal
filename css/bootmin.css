@@ -6353,6 +6353,7 @@
 @media (min-width : 300px){
   .footer-page{
     margin-top: 90px;
+    height: 870px;
   }
   .tomboll{
     margin-top: -110px;
@@ -6361,7 +6362,7 @@
     height: 400px;
   }
   .maps .mapouter{
-    margin-left: 95px;
+    margin-left: 75px;
   }
   .nav-footer{
     margin-left: -15px;
@@ -6370,12 +6371,13 @@
     margin-top: 0px;
   }
 }
-@media (min-width : 822px) and (max-width: 990px){
+@media (min-width : 720px) and (max-width: 990px){
   .maps .mapouter{
-    margin-left: 255px;
+    margin-left: 235px;
   }
   .footer-page{
     margin-top: 90px;
+    height: 900px;
   }
   .nav-footer{
     margin-top: 20px;
