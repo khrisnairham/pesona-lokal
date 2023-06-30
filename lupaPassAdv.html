@@ -34,17 +34,12 @@
           Lupa Kata Sandi
         </h3>
         <div class="form-inner">
-          <form id="lupaPassAdv" action="LupaSandi.php" method="POST" class="login">
+          <form id="lupaPassAdv" method="POST" action="cek_kodeverify.php"  class="login">
             <pre></pre>
-            <div id="loginAlertContainer"></div>
-            <div class="field">
-                <input type="password" name="password" id="password" placeholder="Masukan Password Baru" required>
-              </div>
-              <div class="field">
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required><br>
-            <p style="color: rgba(102, 102, 102, 0.959); font-weight: 500; padding-top: 30px;margin-left: 10px; margin-bottom: -10px;">Masukan Kode Verifikasi</p>
-            </div><br><br>
-            <div
+            <div id="lupaAlertContainer"></div> 
+             <p style="color: rgba(102, 102, 102, 0.959); font-weight: 500; padding-top: 30px;margin-left: 10px; margin-bottom: -10px;">Masukan Kode Verifikasi</p>
+             <div 
+           
               id="otp"
               class="inputs d-flex flex-row justify-content-center mt-2"
             >
@@ -52,8 +47,18 @@
                 class="m-2 text-center form-control rounded"
                 type="text"
                 id="first"
-                maxlength="1" required
+                name="verification_code"
+                maxlength="6" required
               />
+              </div>
+            <div class="field">
+                <input type="password" name="password" id="password" placeholder="Masukan Password Baru" required>
+              </div>
+              <div class="field">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required><br>
+           
+            </div><br><br>
+           
               <!-- <input
                 class="m-2 text-center form-control rounded"
                 type="text"
@@ -82,9 +87,9 @@
                 class="m-2 text-center form-control rounded"
                 type="text"
                 id="sixth"
-                maxlength="1" required
+                maxlength="6" required
               /> -->
-            </div>
+            
             <div class="field btn">
               <div class="btn-layer"></div>
               <input type="submit" value="Reset" />
@@ -100,87 +105,39 @@
     </div>
     <script>
       document
-        .getElementById("loginform")
+        .getElementById("lupaPassAdv")
         .addEventListener("submit", function (event) {
           event.preventDefault(); // Mencegah pengiriman form secara default
-          loginUser();
+          codeVerify();
         });
 
-      document
-        .getElementById("registerForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Mencegah pengiriman form secara default
-          registerUser();
-        });
+     
       //dinggo login
-      function loginUser() {
-        var form = document.getElementById("loginform");
-        var formData = new FormData(form);
+       function codeVerify() {
+            var form = document.getElementById("lupaPassAdv");
+            var formData = new FormData(form);
 
-        var loginAlertContainer = document.getElementById(
-          "loginAlertContainer"
-        );
-        loginAlertContainer.innerHTML = ""; // Menghapus semua alert login sebelumnya
+            var lupaAlertContainer = document.getElementById("lupaAlertContainer");
+            lupaAlertContainer.innerHTML = ""; // Menghapus semua alert login sebelumnya
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "login.php", true);
-        xhr.onload = function () {
-          if (xhr.status === 200) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "cek_kodeverify.php", true);
+            xhr.onload = function() {
+                 if (xhr.status === 200) {
             var response = xhr.responseText.trim();
-            if (response === "Login berhasil!") {
-              window.location.href = "home-login.html"; // Mengarahkan ke halaman selanjutnya
-            } else {
-              showAlert(
-                "danger",
-                "Login gagal. " + response,
-                loginAlertContainer
-              );
-            }
-          } else {
-            showAlert(
-              "danger",
-              "Terjadi kesalahan. Silakan coba lagi.",
-              loginAlertContainer
-            );
-          }
-        };
-        xhr.send(formData);
-      }
+                if (response === 'Kode verifikasi telah dikirim ke alamat email Anda.') {
+                window.location.href = "loginSignUp.html"; // Mengarahkan ke halaman selanjutnya
+                } else {
+                showAlert("danger", "" + response, lupaAlertContainer);
+                    }
+                } else {
+                    showAlert("danger", "Terjadi kesalahan. Silakan coba lagi.", lupaAlertContainer);
+                    }
+                };
+            xhr.send(formData);
+        }
 
-      //fungsi dinggo register
-      function registerUser() {
-        var form = document.getElementById("registerForm");
-        var formData = new FormData(form);
-
-        var registerAlertContainer = document.getElementById(
-          "registerAlertContainer"
-        );
-        registerAlertContainer.innerHTML = ""; // Menghapus semua alert registrasi sebelumnya
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "register.php", true);
-        xhr.onload = function () {
-          if (xhr.status === 200) {
-            var response = xhr.responseText.trim();
-            if (response === "Registrasi berhasil!") {
-              window.location.href = "loginSignUp.html"; // Mengarahkan ke halaman selanjutnya
-            } else {
-              showAlert(
-                "danger",
-                "Registrasi gagal. " + response,
-                registerAlertContainer
-              );
-            }
-          } else {
-            showAlert(
-              "danger",
-              "Terjadi kesalahan. Silakan coba lagi.",
-              registerAlertContainer
-            );
-          }
-        };
-        xhr.send(formData);
-      }
+     
       //dinggo nampilke pesan eror
       function showAlert(type, message, container) {
         // membuat  elemen Alert Bootstrap
