@@ -36,7 +36,7 @@ body {
 }
 .navbar2-nav {
   margin-left: auto;
-  padding-right: 60px;
+  padding-right: 20px;
 }
 
 .navbar2 .navbar-logo {
@@ -76,7 +76,7 @@ body {
 
 .navbar2 .navbar2-nav a:hover::after {
   transform: scaleX(0.5);
-}
+} 
 
 .navbar2 .navbar2-extra a {
   color: #000;
@@ -154,7 +154,7 @@ body {
   }
 
   .navbar2 .navbar2-nav a {
-    color: var(--bg);
+    color: #b0aeae;
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;

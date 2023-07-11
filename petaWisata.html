@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peta Wisata - Pesona Lokal</title>
- 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
     <!-- Feathere Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
@@ -31,10 +32,10 @@
       <a href="home.html" class="navbar2-logo"><img src="./assets/pesona.PNG" alt=""></a>
 
       <div class="navbar2-nav">
-        <a href="#" style="text-decoration: none;">Destinasi</a>
-        <a href="#" style="text-decoration: none;">Reservasi</a>
-        <a href="#" style="text-decoration: none;">Peta Wisata</a>
-        <a href="#" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
+        <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
+        <a href="tiket.html" style="text-decoration: none;">Reservasi</a>
+        <a href="petaWisata.html" style="text-decoration: none;">Peta Wisata</a>
+        <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
       </div>
 
       <div class="navbar2-extra">
@@ -43,6 +44,13 @@
       </div>
     </nav>
     <!-- Navbar end -->
+    <?php 
+    if (isset($_SESSION['email'])) {
+        echo '<li><a href="userwork.php" title="Profile">Profile</a></li>';
+    } else {
+        echo '<li><a href="login.php" title="Log In">Log In</a></li>';
+    }
+    ?>
 
     <!-- MAIN -->
     <section class="hero" id="home">
@@ -61,17 +69,17 @@
       Mau kemana nih? : 
       <select class="selectpicker" data-show-subtext="false" data-live-search="true">
         <option value="">Search</option>
-        <option value='Anaesthesia'>Anaesthesia</option>
-        <option value='Anatomy and Physiology'>Anatomy and Physiology</option>
-        <option value='Cardiology'>Cardiology</option>
-        <option value='Clinical Skills'>Clinical Skills</option>
-        <option value='Critical Care'>Critical Care</option>
-        <option value='Dermatology'>Dermatology</option>
-        <option value='Ear, Nose and Throat'>Ear, Nose and Throat</option>
-        <option value='Emergency Medicine'>Emergency Medicine</option>
-        <option value='Emergency Nursing'>Emergency Nursing</option>
-        <option value='Endocrinology and Diabetes'>Endocrinology and Diabetes</option>
-        <option value='Gastroenterology'>Gastroenterology</option>
+        <option value='Anaesthesia'>Tugu Yogyakarta</option>
+        <option value='Anatomy and Physiology'>Pantai Depok</option>
+        <option value='Cardiology'>Gunung Merapi</option>
+        <option value='Clinical Skills'>Gumuk Pasir</option>
+        <option value='Critical Care'>Heha Sky View</option>
+        <option value='Dermatology'>Sleman</option>
+        <option value='Ear, Nose and Throat'>Kota Yogyakarta</option>
+        <option value='Emergency Medicine'>Kulon Progo</option>
+        <option value='Emergency Nursing'>Bantul</option>
+        <option value='Endocrinology and Diabetes'>Gunung Kidul</option>
+        <!--<option value='Gastroenterology'>Gastroenterology</option>
         <option value='General Dentistry'>General Dentistry</option>
         <option value='General Medicine'>General Medicine</option>
         <option value='General Practice'>General Practice</option>
@@ -104,12 +112,12 @@
         <option value='Restorative Dentistry'>Restorative Dentistry</option>
         <option value='Rheumatology'>Rheumatology</option>
         <option value='Surgery'>Surgery</option>
-        <option value='Urology'>Urology</option>
+        <option value='Urology'>Urology</option> -->
       </select><i class="bi bi-filetype-png"></i>
     </div><br><br> 
     
    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-   <a href=""><button class="custom-btn btn-5"><span>Download Peta</span></button></a><br>
+   <a href="https://github.com/khrisnairham/pesona-lokal/blob/cek/assets/Peta%20wisata%202022-1.png?raw=true"><button class="custom-btn btn-5"><span>Download Peta</span></button></a><br>
  
     <div class="petaa"><img src="./assets/Peta wisata 2022-1.png" alt=""></div:cla>
   </div>
@@ -200,6 +208,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
       <!-- My JavaScript -->
       <script src="./js/template.js"></script>
+          
+      <script> $(document).ready(function() {
+        $('[title="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]').hide();
+    });</script>
+    
       
   </body>
 </html>

@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HomeUser - Pesona Lokal</title>
- 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
     <!-- Feathere Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
@@ -35,9 +36,9 @@
         <a href="home.html" class="navbar2-logo"><img src="./assets/pesona.PNG" alt=""></a>
 
       <div class="navbar2-nav">
-        <a href="#" style="text-decoration: none;">Destinasi</a>
-        <a href="#" style="text-decoration: none;">Reservasi</a>
-        <a href="#" style="text-decoration: none;">Peta Wisata</a>
+        <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
+        <a href="tiket.html" style="text-decoration: none;">Reservasi</a>
+        <a href="petaWisata.html" style="text-decoration: none;">Peta Wisata</a>
         <div class="btn-group" style="padding-left: -200px;">
           <button type="button" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fas fa-user-circle fa-lg" style="font-size: 30px; padding-left: 20px;color: #012467;"></i>
@@ -76,14 +77,23 @@
             <div class="carousel-inner">
               <div class="item active">
                 <img src="./assets/rectangle-3.png" alt="TUGU" style="width:100%;">
+                <div class="carousel-caption">
+                  <p class="text-white">Tugu Yogyakarta</p>
+                </div>
               </div>
         
               <div class="item">
                 <img src="./assets/gbrslider (1).png" alt="Pantai" style="width:100%;">
+                <div class="carousel-caption">
+                  <p class="text-white">Pantai Indrayanti</p>
+                </div>
               </div>
             
               <div class="item">
                 <img src="./assets/gbrslider.png" alt="Kraton" style="width:100%;">
+                <div class="carousel-caption">
+                  <p class="text-white">Keraton Yogyakarta</p>
+                </div>
               </div>
             </div>
         
@@ -107,7 +117,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
-            <a class="text-decoration-none" href="./assets/rectangle-5.png" target="_blank">
+            <a class="text-decoration-none" href="destinasi.html">
               <img src="./assets/rectangle-5.png" alt="Lights">
               <div class="caption" style="padding: 1px;">
                 <p>Destinasi</p>
@@ -157,7 +167,7 @@
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-            <a class="text-decoration-none" href="./assets/rectangle-8.png" target="_blank">
+            <a class="text-decoration-none" href="event.html">
               <img src="./assets/rectangle-8.png" alt="Fjords">
               <div class="caption" style="padding: 1px;">
                 <p>Event</p>
@@ -411,5 +421,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- My JavaScript -->
     <script src="./js/template.js"></script>
+        
+    <script> $(document).ready(function() {
+      $('[title="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]').hide();
+  });</script>
+   
 </body>
 </html>
