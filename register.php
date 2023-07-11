@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database
 $host = "localhost";
-$username = "id20751189_pesonalokal2023";
-$database = "id20751189_pesonalokal";
-$password = "Pesonalokal2023.";
+$username = "root";
+$database = "pesona_lokal";
+$password = "";
 
 $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {
@@ -16,6 +16,8 @@ $username = $_POST['nama'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
+$kodeUnik = 'khususadmin900';
+$confirm_id = $_POST['confirm_id'];
 
 
 
@@ -44,16 +46,20 @@ $confirm_password = $_POST['confirm_password'];
     }
         elseif ($password !== $confirm_password) {
             die('Konfirmasi password tidak cocok!');
-        } else {
+        } 
+        elseif ($confirm_id !== $kodeUnik) {
+            die('Konfirmasi Kode Admin Salah !!');
+        }else {
             // nambahke data ng database
-            $query = "INSERT INTO Users (username, email, password) VALUES ('$username', '$email', '$password')";
+            $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
             if ($conn->query($query) === TRUE) {
                 die( 'Registrasi berhasil!');
             } else {
                 die('Error: ' . $query . '<br>' . $conn->error);
-            }
+            }  
         }
+        
     }
 }
 

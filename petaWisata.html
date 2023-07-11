@@ -32,10 +32,10 @@
       <a href="home.html" class="navbar2-logo"><img src="./assets/pesona.PNG" alt=""></a>
 
       <div class="navbar2-nav">
-        <a href="#" style="text-decoration: none;">Destinasi</a>
-        <a href="#" style="text-decoration: none;">Reservasi</a>
-        <a href="#" style="text-decoration: none;">Peta Wisata</a>
-        <a href="#" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
+        <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
+        <a href="tiket.html" style="text-decoration: none;">Reservasi</a>
+        <a href="petaWisata.html" style="text-decoration: none;">Peta Wisata</a>
+        <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
       </div>
 
       <div class="navbar2-extra">
@@ -44,6 +44,13 @@
       </div>
     </nav>
     <!-- Navbar end -->
+    <?php 
+    if (isset($_SESSION['email'])) {
+        echo '<li><a href="userwork.php" title="Profile">Profile</a></li>';
+    } else {
+        echo '<li><a href="login.php" title="Log In">Log In</a></li>';
+    }
+    ?>
 
     <!-- MAIN -->
     <section class="hero" id="home">

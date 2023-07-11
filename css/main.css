@@ -332,6 +332,11 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
   margin-bottom: -240px;
 }
 
+.container .paragrafIsi{ 
+  width: auto;
+  font-size: 16px;;
+}
+
 @media (min-width:1900px) and (max-width:2600px){
   .container {
       margin-top: 130px; 
