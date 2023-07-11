@@ -12,15 +12,14 @@
   border: none;
   text-decoration: none;
 }
- 
+
 body {
   font-family: monsterart;
   background-color: var(--bg);
-  color: #fff;
+  color: #000000;
 }
-
 /* Navbar */
-.container h2{
+.container h2 {
   margin-bottom: 40px;
   color: #012467;
   font-size: xx-large;
