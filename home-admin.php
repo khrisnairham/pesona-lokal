@@ -40,6 +40,9 @@
     <link rel="stylesheet" href="./css/strap.css">
     <link rel="stylesheet" href="./css/bootmin.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
  
   </head>
   <body>
@@ -239,6 +242,7 @@
         }     ?>     
               
               <a href="#" class="btn btn-outline-dark">Read More</a>
+              <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
             </div>
         </div>
     </div>        
@@ -261,6 +265,7 @@
         }     ?>     
               
               <a href="#" class="btn btn-outline-dark">Read More</a>
+              <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
             </div>
         </div>
     </div>
@@ -283,6 +288,7 @@
         }    ?>     
               
               <a href="#" class="btn btn-outline-dark">Read More</a>
+              <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
             </div>
         </div>
     </div>
@@ -308,6 +314,7 @@
                   <p class="pesantiket1"><?php echo $row['title']; ?></p>
                   <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                   <span><?php echo $row['harga']; ?></span>
+                  <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
             </a>
           </div>
@@ -328,6 +335,7 @@
                   <p class="pesantiket1"><?php echo $row['title']; ?></p>
                   <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                   <span><?php echo $row['harga']; ?></span>
+                  <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
             </a>
           </div>
@@ -348,6 +356,7 @@
                   <p class="pesantiket1"><?php echo $row['title']; ?></p>
                 <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                 <span><?php echo $row['harga']; ?></span>
+                <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
             </a>
           </div>
@@ -376,8 +385,36 @@
               <img src="./assets/kuner (1).png" alt="Lights" style="width:100%">
               <div class="caption">
                   <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
-              </div>
+                </div>
             </a>
+            <button id="modalBtnChange" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="inputModalChange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header align-self-end">
+                      <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <label for="formFile" class="form-label">Judul</label>
+                      <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                      <p>Gambar</p>
+                      <div class="mb-3">
+                      <label for="formFile" class="form-label">Gambar</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <label for="formFile" class="form-label">Deskripsi</label>
+                      <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="15"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <form action="save.php">
+                      <button type="submit" class="btn btn-primary">Upload</button></form>
+                  </div>
+            </div>
           </div>
         </div>
         <?php
@@ -394,10 +431,39 @@
               <img src="./assets/kuner (2).png" alt="Lights" style="width:100%">
               <div class="caption">
                   <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
-              </div>
+                </div>
             </a>
+            <button id="modalBtnChange2" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal2" data-target="#inputModalChange2"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
           </div>
         </div>
+      
+        <!-- Modal -->
+        <div class="modal fade" id="inputModalChange2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header align-self-end">
+                      <button id="5" type="button" class="close" data-dismiss="modal2" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <label for="formFile" class="form-label">Judul</label>
+                      <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                      <p>Gambar</p>
+                      <div class="mb-3">
+                      <label for="formFile" class="form-label">Gambar</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <label for="formFile" class="form-label">Deskripsi</label>
+                      <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="15"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <form action="save.php">
+                      <button type="submit" class="btn btn-primary">Upload</button></form>
+                    </div>
+                  </div>
+                </div>
+              </div>
         <?php
         }    ?>
          <?php
@@ -412,7 +478,9 @@
               <img src="./assets/kuner (3).png" alt="Lights" style="width:100%">
               <div class="caption">
                   <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
-              </div>
+                  <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
+
+                </div>
             </a>
           </div>
         </div>
@@ -543,7 +611,11 @@
   <script>
     feather.replace();
   </script>
-
+<style>
+  .modal {
+    margin-top: 100px;
+  }
+</style>
   <!-- EXTERNAL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- My JavaScript -->
@@ -552,6 +624,6 @@
     <script> $(document).ready(function() {
       $('[title="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]').hide();
   });</script>
-   
+   <script src="./js/modal.js"></script>
 </body>
 </html>
