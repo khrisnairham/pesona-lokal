@@ -178,52 +178,101 @@
       </div>
     </div>
     <!-- END OF PILIHAN FITUR -->
+    <?php
+    // Koneksi ke database
+    $host = "localhost";
+    $username = "root";
+    $database = "pesona_lokal";
+    $password = "";
+    
+    $conn = new mysqli($host, $username, $password, $database);
+    if ($conn->connect_error) {
+        die('Koneksi gagal: ' . $conn->connect_error);
+    }
+   
+    ?>
 
     <!-- REKOMENDASI WISATA  -->
     <div class="container my-5 backg">
-      <h2>Rekomendasi Wisata</h2>
-      <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+      <h2>Rekomendasi Wisata</h2>       
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+?>
+          <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
         <div class="col-md-4" style="margin-left: inherit;">
-          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 157.png" />
+        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 157.png" />
         </div>
         <div class="col-md-8">
           <div class="p-5 mt-4">
-              <h1 class="display-5" style="padding-bottom: 30px;">Menikmati Kemegahan Gunung Merapi</h1>
-              <p class="lead">Selain Bukit Klangon, ada pula spot camping di dekat Gunung Merapi yang juga menawarkan keindahan dan sensasi berkemah yang menarik, namanya adalah Nawang Jagad.</p>
+              <!-- <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;">Menikmati Kemegahan Gunung Merapi</h1> -->
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }     ?>     
+              
+              <a href="#" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>        
+              
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '2'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 40.png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-4">
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }     ?>     
+              
               <a href="#" class="btn btn-outline-dark">Read More</a>
             </div>
         </div>
     </div>
-    <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 40.png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-4">
-            <h1 class="display-5" style="padding-bottom: 30px;">Bersantai bersama orang tercinta di HeHa Sky View</h1>
-            <p class="lead">Salah satu destinasi wisata favorit yang menawarkan pemandangan terbaik kota Yogyakarta dan sekitarnya “dari lantai 2”. Terletak di kawasan perbukitan Gunungkidul, HeHa Sky View hanya berjarak 40 menit dari pusat Kota Yogyakarta.</p>
-            <a href="#" class="btn btn-outline-dark">Read More</a>
-          </div>
-      </div>
-  </div>
-  <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 158.png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-4">
-            <h1 class="display-5" style="padding-bottom: 30px;">Rasakan kesegaran di sungai berwarna biru</h1>
-            <p class="lead">Taman Sungai Mudal, sebuah objek wisata alam terbuka yang terletak di Kabupaten Kulon Progo, yang menawarkan pesona sebuah kolam pemandian yang bersumber dari mata air alami.</p>
-            <a href="#" class="btn btn-outline-dark">Read More</a>
-          </div>
-      </div>
-  </div>
+              
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 158.png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-4">
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }    ?>     
+              
+              <a href="#" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>
   </div>
 
     <!-- END OF REKOMENDASI WISATA -->
 
     <!-- Pesan Tiket Tujuan -->
-    <div class="container">
+    <?php
+        $query = "SELECT * FROM home_title_tiket where id = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <div class="container">
       <h2>Pesan Tiket Wisata Tujuanmu !!</h2>
       <div class="row">
         <div class="col-md-4">
@@ -231,9 +280,9 @@
             <a class="text-decoration-none" href="./assets/pesantiket (1).jpg" target="_blank">
               <img src="./assets/pesantiket (1).jpg" alt="Lights" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Pantai Baron dan sekitarnya</p>
-                  <p class="pesantiket">Kunjungi Banyak Pantai</p><br>
-                  <span>Rp.10.000</span>
+                  <p class="pesantiket1"><?php echo $row['title']; ?></p>
+                  <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
+                  <span><?php echo $row['harga']; ?></span>
               </div>
             </a>
           </div>
@@ -243,9 +292,9 @@
             <a class="text-decoration-none" href="./assets/pesantiket (2).png" target="_blank">
               <img src="./assets/pesantiket (2).png" alt="Nature" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Bunker Kaliadem</p>
-                  <p class="pesantiket">Nikmati Kemegahan Merapi</p><br>
-                  <span>Rp.10.000</span>
+                  <p class="pesantiket1"></p>
+                  <p class="pesantiket"></p><br>
+                  <span></span>
               </div>
             </a>
           </div>
@@ -255,15 +304,21 @@
             <a class="text-decoration-none" href="./assets/pesantiket (1).png" target="_blank">
               <img src="./assets/pesantiket (1).png" alt="Fjords" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Tamansari</p>
-                <p class="pesantiket">Pemandian para raja dan ratu</p><br>
-                <span>Rp.10.000</span>
+                  <p class="pesantiket1"></p>
+                <p class="pesantiket"></p><br>
+                <span></span>
               </div>
             </a>
           </div>
         </div>
       </div>
     </div>
+      <?php
+        }    ?>     
+   
+    
+
+    
     <!-- END of Pesan Tiket Tujuan -->
 
     <!-- KULINER -->
