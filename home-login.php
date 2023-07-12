@@ -9,7 +9,19 @@
     </script>
     <!-- Feathere Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-
+    <?php
+    // Koneksi ke database
+    $host = "localhost";
+    $username = "root";
+    $database = "pesona_lokal";
+    $password = "";
+    
+    $conn = new mysqli($host, $username, $password, $database);
+    if ($conn->connect_error) {
+        die('Koneksi gagal: ' . $conn->connect_error);
+    }
+   
+    ?>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -77,24 +89,49 @@
             <div class="carousel-inner">
               <div class="item active">
                 <img src="./assets/rectangle-3.png" alt="TUGU" style="width:100%;">
+                <?php
+    $query = "SELECT * FROM home_title_komen where id = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                 <div class="carousel-caption">
-                  <p class="text-white">Tugu Yogyakarta</p>
+                  <p class="text-white"><?php echo $row['tit_slider']; ?></p>
                 </div>
+        <?php
+        }    ?>
+               
               </div>
         
               <div class="item">
                 <img src="./assets/gbrslider (1).png" alt="Pantai" style="width:100%;">
+                <?php
+    $query = "SELECT * FROM home_title_komen where id = '2'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                 <div class="carousel-caption">
-                  <p class="text-white">Pantai Indrayanti</p>
+                  <p class="text-white"><?php echo $row['tit_slider']; ?></p>
                 </div>
+        <?php
+        }    ?>
+                
               </div>
             
               <div class="item">
                 <img src="./assets/gbrslider.png" alt="Kraton" style="width:100%;">
+                <?php
+    $query = "SELECT * FROM home_title_komen where id = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                 <div class="carousel-caption">
-                  <p class="text-white">Keraton Yogyakarta</p>
+                  <p class="text-white"><?php echo $row['tit_slider']; ?></p>
                 </div>
-              </div>
+        <?php
+        }    ?>
             </div>
         
             <!-- Left and right controls -->
@@ -113,7 +150,7 @@
   </section>
   <!-- PILIHAN FITUR -->
   <div class="container">
-      <h2 id="h2">Pilihan Fitur</h2>
+      <h2 id="h2">Kategori</h2>
       <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
@@ -178,52 +215,89 @@
       </div>
     </div>
     <!-- END OF PILIHAN FITUR -->
+    
 
     <!-- REKOMENDASI WISATA  -->
     <div class="container my-5 backg">
-      <h2>Rekomendasi Wisata</h2>
-      <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+      <h2>Rekomendasi Wisata</h2>       
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+?>
+          <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
         <div class="col-md-4" style="margin-left: inherit;">
-          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 157.png" />
+        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 157.png" />
         </div>
         <div class="col-md-8">
           <div class="p-5 mt-4">
-              <h1 class="display-5" style="padding-bottom: 30px;">Menikmati Kemegahan Gunung Merapi</h1>
-              <p class="lead">Selain Bukit Klangon, ada pula spot camping di dekat Gunung Merapi yang juga menawarkan keindahan dan sensasi berkemah yang menarik, namanya adalah Nawang Jagad.</p>
+              <!-- <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;">Menikmati Kemegahan Gunung Merapi</h1> -->
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }     ?>     
+              
+              <a href="#" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>        
+              
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '2'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 40.png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-4">
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }     ?>     
+              
               <a href="#" class="btn btn-outline-dark">Read More</a>
             </div>
         </div>
     </div>
-    <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 40.png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-4">
-            <h1 class="display-5" style="padding-bottom: 30px;">Bersantai bersama orang tercinta di HeHa Sky View</h1>
-            <p class="lead">Salah satu destinasi wisata favorit yang menawarkan pemandangan terbaik kota Yogyakarta dan sekitarnya “dari lantai 2”. Terletak di kawasan perbukitan Gunungkidul, HeHa Sky View hanya berjarak 40 menit dari pusat Kota Yogyakarta.</p>
-            <a href="#" class="btn btn-outline-dark">Read More</a>
-          </div>
-      </div>
-  </div>
-  <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 158.png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-4">
-            <h1 class="display-5" style="padding-bottom: 30px;">Rasakan kesegaran di sungai berwarna biru</h1>
-            <p class="lead">Taman Sungai Mudal, sebuah objek wisata alam terbuka yang terletak di Kabupaten Kulon Progo, yang menawarkan pesona sebuah kolam pemandian yang bersumber dari mata air alami.</p>
-            <a href="#" class="btn btn-outline-dark">Read More</a>
-          </div>
-      </div>
-  </div>
+              
+      <?php
+        $query = "SELECT * FROM home_title_rekomen where id_title = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; border-radius: 10px;">
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-100 shadow" alt="Responsive image" src="./assets/Rectangle 158.png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-4">
+            <h1 id="titleHome" class="display-5" style="padding-bottom: 30px;"><?php echo $row['title_rekomendasi']; ?></h1>      
+            <p class="lead"><?php echo $row['deskripsi_rekomendasi']; ?></p>
+      <?php
+        }    ?>     
+              
+              <a href="#" class="btn btn-outline-dark">Read More</a>
+            </div>
+        </div>
+    </div>
   </div>
 
     <!-- END OF REKOMENDASI WISATA -->
 
     <!-- Pesan Tiket Tujuan -->
-    <div class="container">
+    <?php
+        $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <div class="container">
       <h2>Pesan Tiket Wisata Tujuanmu !!</h2>
       <div class="row">
         <div class="col-md-4">
@@ -231,112 +305,165 @@
             <a class="text-decoration-none" href="./assets/pesantiket (1).jpg" target="_blank">
               <img src="./assets/pesantiket (1).jpg" alt="Lights" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Pantai Baron dan sekitarnya</p>
-                  <p class="pesantiket">Kunjungi Banyak Pantai</p><br>
-                  <span>Rp.10.000</span>
+                  <p class="pesantiket1"><?php echo $row['title']; ?></p>
+                  <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
+                  <span><?php echo $row['harga']; ?></span>
               </div>
             </a>
           </div>
         </div>
+        <?php
+        }    ?>
+        <?php
+        $query = "SELECT * FROM home_title_tiket where id = '2'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
         <div class="col-md-4">
           <div class="thumbnail">
             <a class="text-decoration-none" href="./assets/pesantiket (2).png" target="_blank">
               <img src="./assets/pesantiket (2).png" alt="Nature" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Bunker Kaliadem</p>
-                  <p class="pesantiket">Nikmati Kemegahan Merapi</p><br>
-                  <span>Rp.10.000</span>
+                  <p class="pesantiket1"><?php echo $row['title']; ?></p>
+                  <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
+                  <span><?php echo $row['harga']; ?></span>
               </div>
             </a>
           </div>
         </div>
+        <?php
+        }    ?>
+        <?php
+        $query = "SELECT * FROM home_title_tiket where id = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
         <div class="col-md-4">
           <div class="thumbnail">
             <a class="text-decoration-none" href="./assets/pesantiket (1).png" target="_blank">
               <img src="./assets/pesantiket (1).png" alt="Fjords" style="width:100%">
               <div class="caption">
-                  <p class="pesantiket1">Tamansari</p>
-                <p class="pesantiket">Pemandian para raja dan ratu</p><br>
-                <span>Rp.10.000</span>
+                  <p class="pesantiket1"><?php echo $row['title']; ?></p>
+                <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
+                <span><?php echo $row['harga']; ?></span>
               </div>
             </a>
           </div>
         </div>
+        <?php
+        }    ?>
       </div>
     </div>
+     
+    
     <!-- END of Pesan Tiket Tujuan -->
 
     <!-- KULINER -->
     <div class="container">
       <h2>Ada Rekomendasi Makanan Favorit Nihh</h2>
       <div class="row">
-        <div class="col-md-4">
+    <?php
+    $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+               <div class="col-md-4">
           <div class="thumbnail">
             <a class="text-decoration-none" href="./assets/kuner (1).png" target="_blank">
               <img src="./assets/kuner (1).png" alt="Lights" style="width:100%">
               <div class="caption">
-                  <p class="kuliner">Gudeg khas Jogja</p>
+                  <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <?php
+        }    ?>
+         <?php
+    $query = "SELECT * FROM home_title_tiket where id = '2'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+               <div class="col-md-4">
           <div class="thumbnail">
             <a class="text-decoration-none" href="./assets/kuner (2).png" target="_blank">
-              <img src="./assets/kuner (2).png" alt="Nature" style="width:100%">
+              <img src="./assets/kuner (2).png" alt="Lights" style="width:100%">
               <div class="caption">
-                  <p class="kuliner">Nyantai diKopi Klotok</p>
+                  <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <?php
+        }    ?>
+         <?php
+    $query = "SELECT * FROM home_title_tiket where id = '3'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+               <div class="col-md-4">
           <div class="thumbnail">
             <a class="text-decoration-none" href="./assets/kuner (3).png" target="_blank">
-              <img src="./assets/kuner (3).png" alt="Fjords" style="width:100%">
+              <img src="./assets/kuner (3).png" alt="Lights" style="width:100%">
               <div class="caption">
-                  <p class="kuliner">Sate Klatak yang Menggoda</p>
+                  <p class="kuliner"><?php echo $row['title_kuliner']; ?></p>
               </div>
             </a>
           </div>
         </div>
+        <?php
+        }    ?>
       </div>
     </div>
     <!-- END KULINER -->
 
-    <!-- APAKATA MEREKA  -->
+    <!-- APAKATA MEREKA  -->\
     <div class="container my-5 backg">
       <h2>Apa Kata Mereka?</h2>
-      <div class="row opacity-100" style="background: #ffffffb9; border-radius: 10px;">
+    <?php
+    $query = "SELECT * FROM home_title_komen where id = '1'"; // Ganti dengan nama tabel Anda
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+               <div class="row opacity-100" style="background: #ffffffb9; border-radius: 10px;">
         <div class="col-md-4" style="margin-left: inherit;">
           <img class="w-20 mx-auto d-block" style="margin-top: 15px;" alt="Responsive image" src="./assets/mereka (1).png" />
         </div>
         <div class="col-md-8">
           <div class="p-5 mt-0">
-              <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;">Website yang sangat membantu terutama bagi saya yang sangat awam saat ingin pergi berwisata ke Jogja</p>
+              <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;"><?php echo $row['title']; ?></p>
             </div>
         </div>
     </div>
     <div class="row opacity-100" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-20 mx-auto d-block" style="margin-top: 15px;" alt="Responsive image" src="./assets/mereka (2).png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-0">
-            <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;">Website yang sangat membantu terutama bagi saya yang sangat awam saat ingin pergi berwisata ke Jogja</p>
-          </div>
-      </div>
-  </div>
-  <div class="row opacity-100" style="background: #ffffffb9; border-radius: 10px;">
-      <div class="col-md-4" style="margin-left: inherit;">
-        <img class="w-20 mx-auto d-block mt-60" style="margin-top: 15px;" alt="Responsive image" src="./assets/mereka (3).png" />
-      </div>
-      <div class="col-md-8">
-        <div class="p-5 mt-0">
-            <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;">Website yang sangat membantu terutama bagi saya yang sangat awam saat ingin pergi berwisata ke Jogja</p>
-          </div>
-      </div>
-  </div>
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-20 mx-auto d-block" style="margin-top: 15px;" alt="Responsive image" src="./assets/mereka (2).png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-0">
+              <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;"><?php echo $row['title']; ?></p>
+            </div>
+        </div>
+    </div>
+    <div class="row opacity-100" style="background: #ffffffb9; border-radius: 10px;">
+        <div class="col-md-4" style="margin-left: inherit;">
+          <img class="w-20 mx-auto d-block" style="margin-top: 15px;" alt="Responsive image" src="./assets/mereka (3).png" />
+        </div>
+        <div class="col-md-8">
+          <div class="p-5 mt-0">
+              <p class="lead" style="margin-left: -90px; font-size: 22px; font-weight: 300;"><?php echo $row['title']; ?></p>
+            </div>
+        </div>
+    </div>
+        <?php
+        }    ?>
+
   </div>
 
     <!-- END OF APAKATA MEREKA -->
