@@ -31,15 +31,28 @@ $('#modalBtnChange2').on('click', function () {
 $('#modalBtnChange3').on('click', function () {
   $('#inputModalChange3').modal('show');
 });
+$('#modalBtnChange4').on('click', function () {
+  $('#inputModalChange4').modal('show');
+});
+$('#modalBtnChange5').on('click', function () {
+  $('#inputModalChange5').modal('show');
+});
+$('#modalBtnChange6').on('click', function () {
+  $('#inputModalChange6').modal('show');
+});
+$('#modalBtnChange7').on('click', function () {
+  $('#inputModalChange7').modal('show');
+});
+$('#modalBtnChange8').on('click', function () {
+  $('#inputModalChange8').modal('show');
+});
+$('#modalBtnChange9').on('click', function () {
+  $('#inputModalChange9').modal('show');
+});
 
 $(document).ready(function (e) {
   // Initializing our modal.
   $('#myModal').modal({
-    backdrop: 'static',
-    keyboard: false,
-    show: false,
-  });
-  $('#myModall').modal({
     backdrop: 'static',
     keyboard: false,
     show: false,
@@ -53,6 +66,5 @@ $(document).ready(function (e) {
 
     $('.modal-body').html('<p>' + ClickedButton + '</p> <p>Some text in the modal.</p> ');
     $('#myModal').modal('show');
-    $('#myModall').modal('show');
   });
 });

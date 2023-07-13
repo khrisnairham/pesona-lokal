@@ -43,7 +43,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
-
 </head>
 
 <body>
@@ -243,10 +242,38 @@
         }     ?>
 
           <a href="#" class="btn btn-outline-dark">Read More</a>
-          <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
+              <button id="modalBtnChange7" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange7"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0" style="color: #012467;"></i></button>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
       <?php
       $query = "SELECT * FROM home_title_rekomen where id_title = '2'"; // Ganti dengan nama tabel Anda
@@ -266,10 +293,38 @@
           }     ?>
 
             <a href="#" class="btn btn-outline-dark">Read More</a>
-            <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
+              <button id="modalBtnChange9" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange9"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0" style="color: #012467;"></i></button>
             </div>
           </div>
-        </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
 
         <?php
         $query = "SELECT * FROM home_title_rekomen where id_title = '3'"; // Ganti dengan nama tabel Anda
@@ -289,9 +344,37 @@
             }    ?>
 
               <a href="#" class="btn btn-outline-dark">Read More</a>
-              <i style="color: #012467;" class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0"></i>
+              <button id="modalBtnChange8" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange8"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-1 end-0" style="color: #012467;"></i></button>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
               </div>
             </div>
+          </div>
           </div>
   </div>
 
@@ -315,11 +398,39 @@
                 <p class="pesantiket1"><?php echo $row['title']; ?></p>
                 <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                 <span><?php echo $row['harga']; ?></span>
-                <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
             </a>
+              <button id="modalBtnChange4" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange4"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
+            </div>
           </div>
-        </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
       <?php
     }    ?>
       <?php
@@ -336,11 +447,39 @@
                 <p class="pesantiket1"><?php echo $row['title']; ?></p>
                 <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                 <span><?php echo $row['harga']; ?></span>
-                <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
-            </a>
+              </a>
+              <button id="modalBtnChange5" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange5"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
+            </div>
           </div>
-        </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
       <?php
       }    ?>
       <?php
@@ -357,11 +496,39 @@
                 <p class="pesantiket1"><?php echo $row['title']; ?></p>
                 <p class="pesantiket"><?php echo $row['deskripsi']; ?></p><br>
                 <span><?php echo $row['harga']; ?></span>
-                <button><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
               </div>
-            </a>
+              </a>
+              <button id="modalBtnChange6" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModalChange6"><i class="fas fa-pencil-alt fa-2xl position-absolute bottom-25 end-50" style="color: #012467;"></i></button>
+            </div>
           </div>
-        </div>
+          <!-- Modal -->
+          <div class="modal fade" id="inputModalChange3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header align-self-end">
+                  <button id="5" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="formFile" class="form-label">Judul</label>
+                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <p>Gambar</p>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <label for="formFile" class="form-label">Deskripsi</label>
+                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <form action="save.php">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
       <?php
       }    ?>
       </div>
@@ -403,7 +570,8 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <div class="mb-3 mt-3">
+                  <p>Gambar</p>
+                  <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
@@ -450,7 +618,8 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <div class="mb-3 mt-3">
+                  <p>Gambar</p>
+                  <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
@@ -496,7 +665,8 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <div class="mb-3 mt-3">
+                  <p>Gambar</p>
+                  <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
