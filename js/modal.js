@@ -39,6 +39,11 @@ $(document).ready(function (e) {
     keyboard: false,
     show: false,
   });
+  $('#myModall').modal({
+    backdrop: 'static',
+    keyboard: false,
+    show: false,
+  });
 
   $(document).on('click', '.modalButton', function () {
     var ClickedButton = $(this).data('name');
@@ -48,5 +53,6 @@ $(document).ready(function (e) {
 
     $('.modal-body').html('<p>' + ClickedButton + '</p> <p>Some text in the modal.</p> ');
     $('#myModal').modal('show');
+    $('#myModall').modal('show');
   });
 });

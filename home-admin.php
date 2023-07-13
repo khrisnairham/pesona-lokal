@@ -43,6 +43,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
+
 </head>
 
 <body>
@@ -402,8 +403,7 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <p>Gambar</p>
-                  <div class="mb-3">
+                  <div class="mb-3 mt-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
@@ -450,8 +450,7 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <p>Gambar</p>
-                  <div class="mb-3">
+                  <div class="mb-3 mt-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
@@ -497,8 +496,7 @@
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <p>Gambar</p>
-                  <div class="mb-3">
+                  <div class="mb-3 mt-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
