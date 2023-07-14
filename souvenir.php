@@ -34,7 +34,7 @@
       <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
       <a href="tiket.html" style="text-decoration: none;">Reservasi</a>
       <a href="petaWisata.html" style="text-decoration: none;">Peta Wisata</a>
-      <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
+      <!-- <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a> -->
     </div>
 
     <div class="navbar2-extra">
@@ -70,7 +70,7 @@
     ?>
       <div class="row opacity-100 shadow p-3 mb-5 bg-white" style="background: #ffffffb9; margin-top: 70px; border-radius: 10px;">
         <div class="col-md-4" style="margin-left: inherit;">
-          <img class="w-100 shadow" alt="Responsive image" src="./assets/Souvenir (1).png" />
+        <a href="./valueContent/blangkon.html"><img class="w-100 shadow" alt="Responsive image" src="./assets/Souvenir (1).png" /></a>
         </div>
 
         <div class="col-md-6">

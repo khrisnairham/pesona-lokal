@@ -7,10 +7,10 @@ session_start();
 // $username = "id20751189_pesonalokal2023";
 // $database = "id20751189_pesonalokal";
 // $password = "Pesonalokal2023.";
- $host = "localhost";
-$username = "id20751189_pesonalokal2023";
-$database = "id20751189_pesonalokal";
-$password = "Pesonalokal2023.";
+$host = "localhost";
+$username = "root";
+$database = "pesona_lokal";
+$password = "";
 
 $conn = new mysqli($host , $username, $password, $database);
 if ($conn->connect_error) {
@@ -230,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <i class="fas fa-user-circle fa-lg" style="font-size: 30px; padding-left: 20px;color: #012467;"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-          <a class="dropdown-item text-decoration-none" href="home.html" style="width: fit-content;"><i class="fas fa-home" style="color: #012467;"></i>&ensp;Home</a>
+          <a class="dropdown-item text-decoration-none" href="home-admin.php" style="width: fit-content;"><i class="fas fa-home" style="color: #012467;"></i>&ensp;Home</a>
           <a class="dropdown-item text-decoration-none" href="profile.php" style="width: fit-content;"><i class="fas fa-user" style="color: #012467;"></i>&ensp;Akun</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item text-decoration-none" href="logout.php" style="width: fit-content;"><i class="fas fa-sign-out" style="color: #012467;"></i>&ensp;Keluar</a>
@@ -338,7 +338,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a class="text-decoration-none" href="kuliner.html">
+          <a class="text-decoration-none" href="kuliner.php">
             <img src="./assets/rectangle-6.png" alt="Nature">
             <div class="caption" style="padding: 1px;">
               <p>Kuliner</p>
@@ -368,7 +368,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a class="text-decoration-none" href="souvenir.html">
+          <a class="text-decoration-none" href="souvenir.php">
             <img src="./assets/rectangle-10.png" alt="Fjords">
             <div class="caption" style="padding: 1px;">
               <p>Souvenir</p>
@@ -804,7 +804,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
         $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
         $result = mysqli_query($conn, $query);
-        $row ['title_kuliner'] ;
+        // $row ['title_kuliner'] ;
        
         while ($row = mysqli_fetch_assoc($result)) {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {

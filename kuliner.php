@@ -42,7 +42,7 @@
       <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
       <a href="reservasi.html" style="text-decoration: none;">Reservasi</a>
       <a href="petaWisata.html" style="text-decoration: none;">Peta Wisata</a>
-      <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a>
+      <!-- <a href="loginSignUp.html" style="color: #FF8E2B; text-decoration: none;">Masuk</a> -->
     </div>
 
     <div class="navbar2-extra">
@@ -80,10 +80,10 @@
     <div class="row mb-5 pb-4 justify-content-end mb-4">
       <form action="/action_page.php" style="width: 550px; content: '\f099';">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Cari kuliner" name="search" style="font-size: 16px; letter-spacing: 2px;">
+          <!-- <input type="text" class="form-control" placeholder="Cari kuliner" name="search" style="font-size: 16px; letter-spacing: 2px;">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
@@ -101,7 +101,7 @@
     ?>
       <div class="row mb-5 pb-4 pt-5">
         <div class="col-2">
-          <a href="#"><img src="assets/kuli1.png" alt=""></a>
+          <a href="./valueContent/gudeg.html"><img src="assets/kuli1.png" alt=""></a>
         </div>
         <div class="col-3">
           <a href="#" class="text-decoration-none text-dark">
@@ -119,7 +119,7 @@
       while ($row = mysqli_fetch_assoc($result)) {
       ?>
         <div class="offset-2 col-2">
-          <a href="#"><img src="assets/kuli2.png" alt=""></a>
+          <a href="./valueContent/bale.html"><img src="assets/kuli2.png" alt=""></a>
         </div>
         <div class="col-3">
           <a href="#" class="text-decoration-none text-dark">

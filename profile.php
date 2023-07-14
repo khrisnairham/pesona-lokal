@@ -7,10 +7,10 @@ if (!isset($_SESSION["email"])) {
   header("Location: loginSignUp.php");
   die();
 }
- $host = "localhost";
-$username = "id20751189_pesonalokal2023";
-$database = "id20751189_pesonalokal";
-$password = "Pesonalokal2023.";
+$host = "localhost";
+$username = "root";
+$database = "pesona_lokal";
+$password = "";
 
 $conn = new mysqli($host , $username, $password, $database);
 if ($conn->connect_error) {
@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <body>
     <!-- Navbar start -->
     <nav class="navbar2">
-      <a href="home-login.html" class="navbar2-logo"><img src="./assets/pesona.PNG" alt=""></a>
+      <a href="home-admin.php" class="navbar2-logo"><img src="./assets/pesona.PNG" alt=""></a>
 
       <div class="navbar2-nav">
         <a href="destinasi.html" style="text-decoration: none;">Destinasi</a>
@@ -211,8 +211,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <i class="fas fa-user-circle fa-lg" style="font-size: 30px; padding-left: 20px;color: #012467;"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-            <a class="dropdown-item text-decoration-none" href="home.html" style="width: fit-content;"><i class="fas fa-home" style="color: #012467;"></i>&ensp;Home</a>
-            <a class="dropdown-item text-decoration-none" href="profile.html" style="width: fit-content;"><i class="fas fa-user" style="color: #012467;"></i>&ensp;Akun</a>
+            <a class="dropdown-item text-decoration-none" href="home-admin.php" style="width: fit-content;"><i class="fas fa-home" style="color: #012467;"></i>&ensp;Home</a>
+            <a class="dropdown-item text-decoration-none" href="profile.php" style="width: fit-content;"><i class="fas fa-user" style="color: #012467;"></i>&ensp;Akun</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item text-decoration-none" href="logout.php" style="width: fit-content;"><i class="fas fa-sign-out" style="color: #012467;"></i>&ensp;Keluar</a>
           </div>
@@ -243,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="opt p-2">
             <div class="row">
               <div class="col-2 d-flex justify-content-center"><i class="far fa-user border align-self-center" style="color: #4f65c5;"></i></div>
-              <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profile.html" style="color: #4f65c5;">Akun</a></p></div>   
+              <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profile.php" style="color: #4f65c5;">Akun</a></p></div>   
             </div>
           </div>
           <!--<div class="opt p-2">-->

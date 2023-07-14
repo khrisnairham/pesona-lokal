@@ -194,7 +194,7 @@ if ($conn->connect_error) {
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-            <a class="text-decoration-none" href="souvenir.html">
+            <a class="text-decoration-none" href="souvenir.php">
               <img src="./assets/rectangle-10.png" alt="Fjords">
               <div class="caption" style="padding: 1px;">
                 <p>Souvenir</p>
