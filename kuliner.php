@@ -8,7 +8,7 @@
   <title>Kuliner - Pesona Lokal</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
   </script>
-  <!-- Feathere Icons -->
+  <!-- Feathere Icons --> 
   <script src="https://unpkg.com/feather-icons"></script>
 
   <!-- fonts -->
@@ -88,6 +88,10 @@
       </form>
     </div>
     <!--end search-->
+    <form action="search.php" method="GET">
+    <input type="text" name="keyword" placeholder="Masukkan kata kunci...">
+    <input type="submit" value="Cari">
+</form>
 
     <?php
     $query = "SELECT * FROM kuliner where id_kul = '1'"; // Ganti dengan nama tabel Anda

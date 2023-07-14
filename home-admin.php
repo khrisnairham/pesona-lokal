@@ -21,8 +21,25 @@
   if ($conn->connect_error) {
     die('Koneksi gagal: ' . $conn->connect_error);
   }
+// Periksa apakah pengguna sudah login atau belum
+// if (!isset($_SESSION['email'])) {
+//   // Jika belum login, redirect ke halaman login
+//   header("Location: loginSignUp.php");
+//     exit();
+// // Mencegah caching pada halaman profil
+// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+// header("Cache-Control: post-check=0, pre-check=0", false);
+// header("Pragma: no-cache");
 
+// }else{
+//   header("Location: home-admin.php");
+//     exit();
+// }
+
+// Tampilkan data profil pengguna
+// Tambahkan kode lainnya sesuai dengan kebutuhan Anda
   ?>
+  
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -502,7 +519,7 @@
             </div>
           </div>
           <!-- Modal -->
-          <div class="modal fade" id="inputModalChange3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="inputModalChange6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header align-self-end">
