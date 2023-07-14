@@ -8,9 +8,9 @@ if (!isset($_SESSION["email"])) {
   die();
 }
  $host = "localhost";
-$username = "root";
-$database = "pesona_lokal";
-$password = "";
+$username = "id20751189_pesonalokal2023";
+$database = "id20751189_pesonalokal";
+$password = "Pesonalokal2023.";
 
 $conn = new mysqli($host , $username, $password, $database);
 if ($conn->connect_error) {
@@ -239,23 +239,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-fluid ms-5 me-5">
       <div class="row d-flex justify-content-center ps-5 pe-5 ms-5 me-5">
         <div class="col-3 border border-2 border-secondary-subtle rounded-4 d-flex flex-column ms-3 me-5 pb-3">
-          <div class="p-2"><p class="fw-semibold display-6 ps-2 pb-3 pt-3 mb-5 mt-2" style="word-break: break-word;">Panggah Mencintaimu</p></div>
+          <div class="p-2"><p class="fw-semibold display-6 ps-2 pb-3 pt-3 mb-5 mt-2" style="word-break: break-word;"> <?php echo isset($_SESSION['nama_depan']) ? $_SESSION['nama_depan'] : ''; ?>  <?php echo isset($_SESSION['nama_belakang']) ? $_SESSION['nama_belakang'] : ''; ?> </p></div>
           <div class="opt p-2">
             <div class="row">
               <div class="col-2 d-flex justify-content-center"><i class="far fa-user border align-self-center" style="color: #4f65c5;"></i></div>
               <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profile.html" style="color: #4f65c5;">Akun</a></p></div>   
             </div>
           </div>
-          <div class="opt p-2">
-            <div class="row">
-              <div class="col-2 d-flex justify-content-center"><i class="far fa-credit-card align-self-center" style="color: #666666;"></i></div>
-             <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profileOrder.html" style="color: #666666;">Order</a></p></div>
-            </div>
-          </div>
+          <!--<div class="opt p-2">-->
+          <!--  <div class="row">-->
+          <!--    <div class="col-2 d-flex justify-content-center"><i class="far fa-credit-card align-self-center" style="color: #666666;"></i></div>-->
+          <!--   <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profileOrder.html" style="color: #666666;">Order</a></p></div>-->
+          <!--  </div>-->
+          <!--</div>-->
           <div class="opt p-2">
             <div class="row">
               <div class="col-2 d-flex justify-content-center"><i class="far fa-edit align-self-center" style="color: #666666;"></i></div>
-              <div class="col-3 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profileReview.html" style="color: #666666;">Review</a></p></div>
+              <div class="col-6 d-flex justify-content-start"><p class="m-0 fs-4"> <a class="text-decoration-none" href="profileReview.html" style="color: #666666;word-break: none;">Kritik & Saran</a></p></div>
             </div>
           </div>
           <div class="opt p-2 mb-5">
@@ -282,75 +282,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="mt-4 ms-3 text-secondary"><p class="mb-0 fs-5">Email</p></div>
 
               <div class="mb-3 ms-3">
-                <form action="" method="POST"  >
+                <!-- <form action="" method="POST"  > -->
                   <div class="input-group">
                     <input disabled name="email"  type="text" class="form-control" style="height: 35px;"   value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">              
                   </div>
-                </form>
+                <!-- </form> -->
               </div>
               <div class="ms-3 text-secondary"><p class="mb-0 fs-5">Nomor Ponsel</p></div>
               <div class="mb-3 ms-3">
-                <form action=" " method="POST">
+                <!-- <form action=" " method="POST"> -->
                   <div class="input-group">
                     <input   type="text" class="form-control" style="height: 35px;" name="no_hp" id="no_hp" value="<?php echo isset($_SESSION['no_hp']) ? $_SESSION['no_hp'] : ''; ?>">                    
                   </div>
                     <div class="field btn">
                
-                </form>
+                <!-- </form> -->
               </div>
               <div class="ms-3 text-secondary"><p class="mb-0 fs-5">Nama Depan</p></div>
               <div class="mb-3 ms-3">
-                <form action="" method="POST">
+                <!-- <form action="" method="POST"> -->
                   <div class="input-group">
-                    <input type="text" id=="n" class="form-control" style="height: 35px;" name="nama_depan" id="nama_depan" value="<?php echo isset($_SESSION['nama_depan']) ? $_SESSION['nama_depan'] : ''; ?>">                                
+                    <input type="text" id="nama_depan" class="form-control" style="height: 35px;" name="nama_depan" id="nama_depan" value="<?php echo isset($_SESSION['nama_depan']) ? $_SESSION['nama_depan'] : ''; ?>">                            
                   </div>
-                </form>
+                <!-- </form> -->
               </div>
               <div class="ms-3 text-secondary"><p class="mb-0 fs-5">Nama Belakang</p></div>
               <div class="mb-3 ms-3">
-                <form action="" method="POST">
+                <!-- <form action="" method="POST"> -->
                   <div class="input-group">
                     <input type="text" class="form-control" style="height: 35px;" name="nama_belakang" id="nama_belakang" value="<?php echo isset($_SESSION['nama_belakang']) ? $_SESSION['nama_belakang'] : ''; ?>">                                
                   </div>
-                </form>
+                <!-- </form> -->
               </div>
               <div class="ms-3 text-secondary"><p class="mb-0 fs-5">No. KTP</p></div>
               <div class="ms-3 mb-5">
-                <form action=" " method="POST">
+                <!-- <form action=" " method="POST"> -->
                   <div class="input-group">
                     <input type="text" class="form-control" style="height: 35px;" name="no_ktp" id="no_ktp" value="<?php echo isset($_SESSION['no_ktp']) ? $_SESSION['no_ktp'] : ''; ?>">                                
                   </div>
-                </form>
-                <div class="btn-layer"></div>
-              <input type="submit" value="Dafftar">
-            </div>
-                 </form>
+                <!-- </form> -->
+                
               </div>
 
-                            <button class="btn btn-primary mt-3 rounded-4 align-self-end me-4"  id="modalBtn" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModal">Simpan</button>
-
+              <button class="btn btn-primary mt-3 rounded-4 align-self-end me-4"  id="modalBtn" style="width: 100px; height: 40px; --bs-btn-font-size: 1.3rem;" data-toggle="modal" data-target="#inputModal">Simpan</button>
               
-               <!--Modal -->
-              <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="myModalLabel">Konfirmasi</h5>
-                      <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      Yakin Ingin Menyimpan?
-                    </div>
-                    <div class="modal-footer">
-                      <button id="close4" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <form action=" ">
-                      <input type="submit" class="btn btn-primary">Save changes</button></form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <!-- Modal -->
+              <!--<div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+              <!--  <div class="modal-dialog" role="document">-->
+              <!--    <div class="modal-content">-->
+              <!--      <div class="modal-header">-->
+              <!--        <h5 class="modal-title" id="myModalLabel">Konfirmasi</h5>-->
+              <!--        <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+              <!--          <span aria-hidden="true">&times;</span>-->
+              <!--        </button>-->
+              <!--      </div>-->
+              <!--      <div class="modal-body">-->
+              <!--        Yakin Ingin Menyimpan?-->
+              <!--      </div>-->
+              <!--      <div class="modal-footer">-->
+              <!--        <button id="close4" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+              <!--        <form action="">-->
+              <!--        <button type="submit" class="btn btn-primary">Save changes</button></form>-->
+              <!--      </div>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+              
+              </form>
                               <!--</form>-->
 
 <style>
@@ -362,7 +360,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             </div>
           </div>
-        </div>        
+        </div>    
+        </form>
       </div>
     </div>
     <!-- ENF OF MAIN -->

@@ -1,14 +1,15 @@
 <?php
 // Koneksi ke database
-$host = "localhost";
-$username = "root";
-$database = "pesona_lokal";
-$password = "";
+ $host = "localhost";
+$username = "id20751189_pesonalokal2023";
+$database = "id20751189_pesonalokal";
+$password = "Pesonalokal2023.";
 
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host , $username, $password, $database);
 if ($conn->connect_error) {
-    die('Koneksi gagal: ' . $conn->connect_error);
+    die("Koneksi gagal: " . $conn->connect_error);
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
@@ -51,7 +52,7 @@ $confirm_id = $_POST['confirm_id'];
             die('Konfirmasi Kode Admin Salah !!');
         }else {
             // nambahke data ng database
-            $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+            $query = "INSERT INTO Users (username, email, password) VALUES ('$username', '$email', '$password')";
 
             if ($conn->query($query) === TRUE) {
                 die( 'Registrasi berhasil!');

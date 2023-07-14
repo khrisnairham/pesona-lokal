@@ -1,3 +1,174 @@
+
+<?php
+session_start();
+// Koneksi ke database
+// Koneksi ke database
+// $host = "localhost";
+// $username = "id20751189_pesonalokal2023";
+// $database = "id20751189_pesonalokal";
+// $password = "Pesonalokal2023.";
+ $host = "localhost";
+$username = "id20751189_pesonalokal2023";
+$database = "id20751189_pesonalokal";
+$password = "Pesonalokal2023.";
+
+$conn = new mysqli($host , $username, $password, $database);
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Periksa apakah pengguna sudah login atau belum
+if (!isset($_SESSION['email'])) {
+  // Jika belum login, redirect ke halaman login
+  header("Location: loginSignUp.php");
+    exit();
+// Mencegah caching pada halaman profil
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+}
+
+
+
+  // Tambahkan fitur pembaruan nomor telepon
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Perbarui nomor telepon
+  if (isset($_POST["no_hp"])) {
+    $newPhone = $_POST["no_hp"];
+
+    // Update nomor telepon di database
+    $email = $_SESSION["email"];
+    $query = "UPDATE Users SET no_hp='$newPhone' WHERE email='$email'";
+    mysqli_query($conn, $query);
+ $_SESSION["no_hp"] = $newPhone;
+    
+  }
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Perbarui nomor telepon
+  if (isset($_POST["nama_depan"])) {
+    $nama_depan = $_POST["nama_depan"];
+
+    // Update nomor telepon di database
+    $email = $_SESSION["email"];
+    $query = "UPDATE Users SET no_ktp='$nama_depan' WHERE email='$email'";
+    mysqli_query($conn, $query);
+ $_SESSION["nama_depan"] = $nama_depan;
+    
+  }
+}
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Perbarui nomor telepon
+  if (isset($_POST["nama_belakang"])) {
+    $nama_belakang = $_POST["nama_belakang"];
+
+    // Update nomor telepon di database
+    $email = $_SESSION["email"];
+    $query = "UPDATE Users SET nama_belakang='$nama_belakang' WHERE email='$email'";
+    mysqli_query($conn, $query);
+ $_SESSION["nama_belakang"] = $nama_belakang;
+    
+  }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Perbarui nomor telepon
+  if (isset($_POST["no_ktp"])) {
+    $no_ktp = $_POST["no_ktp"];
+
+    // Update nomor telepon di database
+    $email = $_SESSION["email"];
+    $query = "UPDATE Users SET no_ktp='$no_ktp' WHERE email='$email'";
+    mysqli_query($conn, $query);
+ $_SESSION["no_ktp"] = $no_ktp;
+    
+  }
+}
+//   // Perbarui nomor telepon
+//   if (isset($_POST["nama_depan"])) {
+//     $nama_depan = $_POST["nama_depan"];
+
+//     // Update nomor telepon di database
+//     $email = $_SESSION["email"];
+//     $query = "UPDATE Users SET nama_depan='$nama_depan' WHERE email='$email'";
+//     mysqli_query($conn, $query);
+//  $_SESSION["nama_depan"] = $nama_depan;
+    
+//   }
+}
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//   // Perbarui nomor telepon
+//   if (isset($_POST["nama_belakang"])) {
+//     $nama_belakang = $_POST["nama_belakang"];
+
+//     // Update nomor telepon di database
+//     $email = $_SESSION["email"];
+//     $query = "UPDATE Users SET nama_belakang='$nama_belakang' WHERE email='$email'";
+//     mysqli_query($conn, $query);
+//  $_SESSION["nama_belakang"] = $nama_belakang;
+    
+//   }
+// }
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//   // Perbarui nomor telepon
+//   if (isset($_POST["no_ktp"])) {
+//     $no_ktp = $_POST["no_ktp"];
+
+//     // Update nomor telepon di database
+//     $email = $_SESSION["email"];
+//     $query = "UPDATE Users SET no_ktp='$no_ktp' WHERE email='$email'";
+//     mysqli_query($conn, $query);
+//  $_SESSION["no_ktp"] = $no_ktp;
+    
+//   }
+// }
+//  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//   // Perbarui email
+//   if (isset($_POST["email"])) {
+//     $newEmail = $_POST["email"];
+
+//     // Update email pengguna di database
+//     $email = $_SESSION["email"];
+//     $query = "UPDATE Users SET email='$newEmail' WHERE email='$email'";
+//     if (!mysqli_query($conn, $query)) {
+//       echo "Error: " . mysqli_error($conn);
+//     } else {
+//       // Update session dengan email yang baru
+//       $_SESSION["email"] = $newEmail;
+       
+//     }
+//   }
+//  }
+// // Perbarui nomor telepon
+//   if (isset($_POST["no_hp"])) {
+//     $newPhone = $_POST["no_hp"];
+
+//     // Update nomor telepon pengguna di database berdasarkan email yang sedang login
+//     $email = $_SESSION["email"];
+//     $query = "UPDATE Users SET no_hp='$newPhone' WHERE email='$email'";
+//     if (!mysqli_query($conn, $query)) {
+//       echo "Error: " . mysqli_error($conn);
+//     } else {
+//       echo "Nomor telepon berhasil diperbarui!";
+//     }
+//   }
+// else {
+//   // Ambil nomor telepon dari database berdasarkan email yang sedang login
+//   $email = $_SESSION["email"];
+//   $query = "SELECT no_hp FROM Users WHERE email='$email'";
+//   $result = mysqli_query($conn, $query);
+//   $row = mysqli_fetch_assoc($result);
+//   $noHp = $row["no_hp"];
+
+ 
+//  }
+ 
+
+// Tampilkan data profil pengguna
+// Tambahkan kode lainnya sesuai dengan kebutuhan Anda
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,36 +181,19 @@
   </script>
   <!-- Feathere Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
-  <?php
-  // Koneksi ke database
-  $host = "localhost";
-  $username = "root";
-  $database = "pesona_lokal";
-  $password = "";
+   
+<!--//   // Koneksi ke database-->
+<!--//   $host = "localhost";-->
+<!--//   $username = "root";-->
+<!--//   $database = "pesona_lokal";-->
+<!--//   $password = "";-->
 
-  $conn = new mysqli($host, $username, $password, $database);
-  if ($conn->connect_error) {
-    die('Koneksi gagal: ' . $conn->connect_error);
-  }
-// Periksa apakah pengguna sudah login atau belum
-// if (!isset($_SESSION['email'])) {
-//   // Jika belum login, redirect ke halaman login
-//   header("Location: loginSignUp.php");
-//     exit();
-// // Mencegah caching pada halaman profil
-// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-// header("Cache-Control: post-check=0, pre-check=0", false);
-// header("Pragma: no-cache");
+<!--//   $conn = new mysqli($host, $username, $password, $database);-->
+<!--//   if ($conn->connect_error) {-->
+<!--//     die('Koneksi gagal: ' . $conn->connect_error);-->
+<!--//   }-->
 
-// }else{
-//   header("Location: home-admin.php");
-//     exit();
-// }
-
-// Tampilkan data profil pengguna
-// Tambahkan kode lainnya sesuai dengan kebutuhan Anda
-  ?>
-  
+//   
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -77,9 +231,9 @@
         </button>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
           <a class="dropdown-item text-decoration-none" href="home.html" style="width: fit-content;"><i class="fas fa-home" style="color: #012467;"></i>&ensp;Home</a>
-          <a class="dropdown-item text-decoration-none" href="profile.html" style="width: fit-content;"><i class="fas fa-user" style="color: #012467;"></i>&ensp;Akun</a>
+          <a class="dropdown-item text-decoration-none" href="profile.php" style="width: fit-content;"><i class="fas fa-user" style="color: #012467;"></i>&ensp;Akun</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item text-decoration-none" href="loginSignUp.html" style="width: fit-content;"><i class="fas fa-sign-out" style="color: #012467;"></i>&ensp;Keluar</a>
+          <a class="dropdown-item text-decoration-none" href="logout.php" style="width: fit-content;"><i class="fas fa-sign-out" style="color: #012467;"></i>&ensp;Keluar</a>
         </div>
       </div>
       <!-- <a href="#" style="color: #FF8E2B; text-decoration: none;">Masuk</a> -->
@@ -334,7 +488,7 @@
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
@@ -373,6 +527,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form method="POST">
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
                   <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
@@ -385,12 +540,12 @@
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action=" ">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
-            </div>
+            </div></form>
           </div>
           </div>
   </div>
@@ -402,7 +557,35 @@
   $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
   $result = mysqli_query($conn, $query);
 
-  while ($row = mysqli_fetch_assoc($result)) {
+ 
+      $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
+      $result = mysqli_query($conn, $query);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["tiket_1"])) {
+          $tiket_1 = $_POST["tiket_1"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title='$tiket_1' WHERE id = '1'";
+            mysqli_query($conn, $query);
+           $row ['title'] = $tiket_1;
+    
+             }
+            }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["harga_1"])) {
+          $harga_1 = $_POST["harga_1"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET harga='$harga_1' WHERE id = '1'";
+            mysqli_query($conn, $query);
+           $row ['harga'] = $harga_1;
+    
+             }
+            }
   ?>
     <div class="container">
       <h2>Pesan Tiket Wisata Tujuanmu !!</h2>
@@ -429,9 +612,10 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form method="POST">
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                <input   type="text" class="form-control" style="height: 35px;" name="tiket_1" id="tiket_1" value="<?php echo $row['title']; ?>"> 
                   <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
@@ -439,6 +623,8 @@
                   </div>
                   <label for="formFile" class="form-label">Deskripsi</label>
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                  <label for="formFile" class="form-label">Harga</label>
+                  <input   type="text" class="form-control" style="height: 35px;" name="harga_1" id="harga_1" value="<?php echo $row['harga']; ?>"> 
                 </div>
                 <div class="modal-footer">
                   <form action="save.php">
@@ -447,6 +633,7 @@
                 </div>
               </div>
             </div>
+            </form>
           </div>
       <?php
     }    ?>
@@ -455,6 +642,30 @@
       $result = mysqli_query($conn, $query);
 
       while ($row = mysqli_fetch_assoc($result)) {
+           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["tiket_2"])) {
+          $tiket_2 = $_POST["tiket_2"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title='$tiket_2' WHERE id = '2'";
+            mysqli_query($conn, $query);
+           $row ['title'] = $tiket_2;
+    
+             }
+            }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["harga_2"])) {
+          $harga_2 = $_POST["harga_2"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET harga='$harga_2' WHERE id = '2'";
+            mysqli_query($conn, $query);
+           $row ['harga'] = $harga_2;
+    
+             }
+            }
       ?>
         <div class="col-md-4">
           <div class="thumbnail">
@@ -478,9 +689,10 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form method="POST">
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                   <input   type="text" class="form-control" style="height: 35px;" name="tiket_2" id="tiket_2" value="<?php echo $row['title']; ?>"> 
                   <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
@@ -488,15 +700,18 @@
                   </div>
                   <label for="formFile" class="form-label">Deskripsi</label>
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                <label for="formFile" class="form-label">Harga</label>
+                   <input   type="text" class="form-control" style="height: 35px;" name="harga_2" id="harga_2" value="<?php echo $row['harga']; ?>"> 
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          </form>
       <?php
       }    ?>
       <?php
@@ -504,6 +719,30 @@
       $result = mysqli_query($conn, $query);
 
       while ($row = mysqli_fetch_assoc($result)) {
+           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["tiket_3"])) {
+          $tiket_3 = $_POST["tiket_3"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title='$tiket_3' WHERE id = '3'";
+            mysqli_query($conn, $query);
+           $row ['title'] = $tiket_3;
+    
+             }
+            }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["harga_3"])) {
+          $harga_3 = $_POST["harga_3"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET harga='$harga_3' WHERE id = '3'";
+            mysqli_query($conn, $query);
+           $row ['harga'] = $harga_3;
+    
+             }
+            }
       ?>
         <div class="col-md-4">
           <div class="thumbnail">
@@ -527,25 +766,29 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form method="POST"> 
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <p>Gambar</p>
+             <input   type="text" class="form-control" style="height: 35px;" name="tiket_3" id="tiket_3" value="<?php echo $row['title']; ?>">                
+                <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
                   <label for="formFile" class="form-label">Deskripsi</label>
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                <label for="formFile" class="form-label">Harga</label>
+                <input   type="text" class="form-control" style="height: 35px;" name="harga_3" id="harga_3" value="<?php echo $row['harga']; ?>">   
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          </form>
       <?php
       }    ?>
       </div>
@@ -561,8 +804,21 @@
         <?php
         $query = "SELECT * FROM home_title_tiket where id = '1'"; // Ganti dengan nama tabel Anda
         $result = mysqli_query($conn, $query);
-
+        $row ['title_kuliner'] ;
+       
         while ($row = mysqli_fetch_assoc($result)) {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["judul_1"])) {
+          $judull = $_POST["judul_1"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title_kuliner='$judull' WHERE id = '1'";
+            mysqli_query($conn, $query);
+           $row ['title_kuliner'] = $judull;
+    
+             }
+            }
         ?>
           <div class="col-md-4">
             <div class="thumbnail">
@@ -576,6 +832,7 @@
             </div>
           </div>
           <!-- Modal -->
+           
           <div class="modal fade" id="inputModalChange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -584,25 +841,30 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form action="" method="POST" >
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                    <input   type="text" class="form-control" style="height: 35px;" name="judul_1" id="judul_1" value="<?php echo $row['title_kuliner']; ?>">                    
+                  
                   <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
                     <input class="form-control" type="file" id="formFile">
                   </div>
+                 
+                  
                   <label for="formFile" class="form-label">Deskripsi</label>
-                  <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
+                  <textarea disabled class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          </form>
         <?php
         }    ?>
         <?php
@@ -610,6 +872,18 @@
         $result = mysqli_query($conn, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["judul_2"])) {
+          $judull2 = $_POST["judul_2"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title_kuliner='$judull2' WHERE id = '2'";
+            mysqli_query($conn, $query);
+           $row ['title_kuliner'] = $judull2;
+    
+             }
+            }
         ?>
           <div class="col-md-4">
             <div class="thumbnail">
@@ -633,8 +907,9 @@
                   </button>
                 </div>
                 <div class="modal-body">
+                     <form action="" method="POST" >
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
+                  <input   type="text" class="form-control" style="height: 35px;" name="judul_2" id="judul_2" value="<?php echo $row['title_kuliner']; ?>"> 
                   <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
@@ -644,13 +919,14 @@
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          </form>
         <?php
         }    ?>
         <?php
@@ -658,6 +934,21 @@
         $result = mysqli_query($conn, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Perbarui nomor telepon
+        if (isset($_POST["judul_3"])) {
+          $judull3 = $_POST["judul_3"];
+
+             // Update nomor telepon di database
+             $query = "UPDATE home_title_tiket SET title_kuliner='$judull3' WHERE id = '3'";
+            mysqli_query($conn, $query);
+           $row ['title_kuliner'] = $judull3;
+    
+             }
+            }
+            
+            
+            
         ?>
           <div class="col-md-4">
             <div class="thumbnail">
@@ -679,25 +970,27 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form action="" method="POST">
                 <div class="modal-body">
                   <label for="formFile" class="form-label">Judul</label>
-                  <textarea class="border rounded border-dark" name="judul" id="judul" cols="75" rows="2"></textarea>
-                  <p>Gambar</p>
+                <input   type="text" class="form-control" style="height: 35px;" name="judul_3" id="judul_3" value="<?php echo $row['title_kuliner']; ?>">                
+                <p>Gambar</p>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Gambar</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <input class="form-control" type="file" name="gambar" id="formFile" >
                   </div>
                   <label for="formFile" class="form-label">Deskripsi</label>
                   <textarea class="border rounded border-dark" name="desk" id="desk" cols="75" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <form action="save.php">
+                  <form action="">
                     <button type="submit" class="btn btn-primary">Upload</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          </form>
         <?php
         }    ?>
       </div>
@@ -844,5 +1137,4 @@
     </script>
     <script src="./js/modal.js"></script>
 </body>
-
 </html>
