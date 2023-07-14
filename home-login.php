@@ -11,16 +11,16 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <?php
     // Koneksi ke database
-    $host = "localhost";
-    $username = "root";
-    $database = "pesona_lokal";
-    $password = "";
-    
-    $conn = new mysqli($host, $username, $password, $database);
-    if ($conn->connect_error) {
-        die('Koneksi gagal: ' . $conn->connect_error);
-    }
-   
+     $host = "localhost";
+$username = "id20751189_pesonalokal2023";
+$database = "id20751189_pesonalokal";
+$password = "Pesonalokal2023.";
+
+$conn = new mysqli($host , $username, $password, $database);
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
     ?>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

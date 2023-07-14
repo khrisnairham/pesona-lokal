@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 
 // Koneksi ke database
 // Koneksi ke database
@@ -7,10 +7,10 @@
 // $username = "id20751189_pesonalokal2023";
 // $database = "id20751189_pesonalokal";
 // $password = "Pesonalokal2023.";
- $host = "localhost";
-$username = "id20751189_pesonalokal2023";
-$database = "id20751189_pesonalokal";
-$password = "Pesonalokal2023.";
+$host = "localhost";
+$username = "root";
+$database = "pesona_lokal";
+$password = "";
 
 $conn = new mysqli($host , $username, $password, $database);
 if ($conn->connect_error) {
@@ -26,7 +26,6 @@ $password = $_POST['password'];
 // Query untuk mencari data user berdasarkan email
 $query = "SELECT * FROM Users WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
- 
 
 if ($result) {
     // Cek apakah email ditemukan
@@ -37,13 +36,7 @@ if ($result) {
         // Verifikasi password
         if ($password === $storedPassword) {
             // Password cocok, proses login berhasil
-            // die("Login berhasil!");
-            $_SESSION['email'] = $email;
-           $_SESSION['no_hp'] = $user["no_hp"];
-           $_SESSION['nama_depan'] = $user["nama_depan"];
-           $_SESSION['nama_belakang'] = $user["nama_belakang"];
-           $_SESSION['no_ktp'] = $user["no_ktp"];
-             header("Location:home-admin.php");
+            die("Login berhasil!");
             // Lanjutkan ke halaman lain atau lakukan tindakan yang sesuai setelah login berhasil
         } else {
             // Password tidak cocok
@@ -58,6 +51,5 @@ if ($result) {
     die ("Terjadi kesalahan dalam proses login.");
 }
 }
-   
 $conn->close();
 ?>
